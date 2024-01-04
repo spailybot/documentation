@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.main.category.website": {
+    "message": "Site Web",
+    "description": "The label for category website in sidebar main"
+  },
+  "sidebar.main.category.public-page": {
+    "message": "Page publique",
+    "description": "The label for category public-page in sidebar main"
+  }
+}

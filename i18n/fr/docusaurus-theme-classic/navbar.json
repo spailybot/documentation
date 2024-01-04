@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "SpailyBot documentation",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "SpailyBot Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Tutorial": {
+    "message": "Tutorial",
+    "description": "Navbar item with label Tutorial"
+  },
+  "item.label.website": {
+    "message": "aller sur le site",
+    "description": "Navbar item with label website"
+  }
+}
