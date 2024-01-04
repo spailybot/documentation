@@ -56,7 +56,7 @@ const config: Config = {
             } satisfies Preset.Options,
         ],
     ],
-
+    plugins: ["docusaurus-plugin-matomo"],
     themeConfig: {
         image: "img/docusaurus-social-card.jpg",
         navbar: {
@@ -76,6 +76,10 @@ const config: Config = {
                 {
                     href: "https://app.spailybot.app/",
                     label: "website",
+                    position: "right",
+                },
+                {
+                    type: "localeDropdown",
                     position: "right",
                 },
             ],
@@ -128,6 +132,10 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
+        },
+        matomo: {
+            matomoUrl: "https://analytics.spailyweb.com/",
+            siteId: "6MqewGyLkmBN6QnKoPXd4bQ3x",
         },
     } satisfies Preset.ThemeConfig,
 };

@@ -3,33 +3,34 @@
 name: Deploy to github pages
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        permissions:
-            contents: write
-        concurrency:
-            group: ${{ github.workflow }}-${{ github.ref }}
-        steps:
-            - uses: actions/checkout@v4
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "lts/*"
-                  cache: "npm"
-                  cache-dependency-path: "package-lock.json"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
 
-            - run: npm ci
-            - run: npm run build
+      - run: npm ci
+      - run: npm run build
 
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
-              if: github.ref == 'refs/heads/main'
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          cname: documentation.spailybot.app
